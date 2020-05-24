@@ -3,9 +3,10 @@ import 'package:wspieramprzyrode/widgets/navbar_item/navbar_item.dart';
 
 class DrawerItem extends StatelessWidget {
   final String title;
-  final IconData icon;
   final String navigationPath;
-  const DrawerItem(this.title, this.icon, this.navigationPath);
+  final IconData icon;
+
+  const DrawerItem(this.title, this.navigationPath, this.icon);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class DrawerItem extends StatelessWidget {
           SizedBox(
             width: 30,
           ),
-          NavBarItem(title, navigationPath)
+          NavBarItem(title, navigationPath, icon: icon)
         ],
       ),
     );

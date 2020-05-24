@@ -8,8 +8,8 @@ class AboutView extends StatelessWidget {
     return Container(
       color: Colors.red,
       child: Text(
-          'About us',
-        ),
+        'About us',
+      ),
     );
   }
 }
