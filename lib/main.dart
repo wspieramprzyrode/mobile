@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/driver_extension.dart';
+import 'package:wspieramprzyrode/constants/app_colors.dart';
 import 'package:wspieramprzyrode/views/layout_template/layout_template.dart';
 import 'locator.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Wspieram Przyrodę',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: primarySwatchColor,
         textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Open Sans'),
       ),
       home: LayoutTemplate(),
