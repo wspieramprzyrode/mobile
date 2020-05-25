@@ -18,7 +18,7 @@ class LayoutTemplate extends StatelessWidget {
         drawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
             ? NavigationDrawer()
             : null,
-        backgroundColor: Colors.white,
+        //drawer: NavigationDrawer(),
         body: CenteredView(
           child: Column(
             children: <Widget>[

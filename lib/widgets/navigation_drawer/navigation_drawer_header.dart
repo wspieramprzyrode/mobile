@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:wspieramprzyrode/constants/app_colors.dart';
-
 class NavigationDrawerHeader extends StatelessWidget {
   const NavigationDrawerHeader({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      color: primaryColor,
+      height: 60,
+      //color: Theme.of(context).accentColor,
       alignment: Alignment.center,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            'SKILL UP NOW',
+            'Wspieram Przyrodę',
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white),
-          ),
-          Text(
-            'TAP HERE',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          )
+                fontSize: 14, fontWeight: FontWeight.w800),
+         ),
         ],
       ),
     );

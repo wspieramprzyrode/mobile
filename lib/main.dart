@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/driver_extension.dart';
-import 'package:wspieramprzyrode/constants/app_colors.dart';
 import 'package:wspieramprzyrode/views/layout_template/layout_template.dart';
+import 'package:theme_provider/theme_provider.dart';
 import 'locator.dart';
 
 void main() {
@@ -16,14 +16,20 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  ThemeProvider(
+      themes: [
+        AppTheme.light(),
+        AppTheme.dark(),
+      ],
+      saveThemesOnChange: true,
+      loadThemeOnInit: true,
+      child: MaterialApp(
       title: 'Wspieram Przyrodę',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: primarySwatchColor,
-        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Open Sans'),
-      ),
-      home: LayoutTemplate(),
+      home: ThemeConsumer(
+        child: LayoutTemplate(),
+      )
+    )
     );
   }
 }
