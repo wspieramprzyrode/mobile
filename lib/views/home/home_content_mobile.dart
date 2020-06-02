@@ -9,7 +9,7 @@ class HomeContentMobile extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
+        const Text(
           'Welcome',
         ),
       ],

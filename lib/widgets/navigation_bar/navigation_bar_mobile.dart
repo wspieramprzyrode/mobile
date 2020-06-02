@@ -9,7 +9,6 @@ class NavigationBarMobile extends StatelessWidget {
       height: 80,
       child: Row(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
             icon: Icon(Icons.menu),
@@ -17,6 +16,7 @@ class NavigationBarMobile extends StatelessWidget {
               Scaffold.of(context).openDrawer();
             },
           ),
+          Text("Wspieram przyrodę")
         ],
       ),
     );

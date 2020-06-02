@@ -16,15 +16,11 @@ class DrawerItem extends StatelessWidget {
           locator<NavigationService>().navigateTo(navigationPath);
           Navigator.pop(context);
         },
-        child: Padding(
-            padding: const EdgeInsets.only(left: 10, top: 20),
-            child: Row(
-              children: <Widget>[
-                Icon(icon),
-                Text(
-                  title,
-                )
-              ],
+        child: ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: Icon(icon),
+            title: Text(
+              title,
             )));
   }
 }
