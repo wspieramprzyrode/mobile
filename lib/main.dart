@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/driver_extension.dart';
+import 'package:wspieramprzyrode/services/api/inventory_service.dart';
 import 'package:wspieramprzyrode/services/geolocation_service.dart';
 import 'package:wspieramprzyrode/views/layout_template/layout_template.dart';
 import 'package:theme_provider/theme_provider.dart';
@@ -13,7 +14,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiProvider(
       providers: [
-        Provider(create: (_) => GeolocationService())
+        Provider(create: (_) => GeolocationService()),
+        Provider(create: (_) => InventoryService()),
       ],
       child: MyApp(),
     ));
