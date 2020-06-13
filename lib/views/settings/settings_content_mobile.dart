@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theme_provider/theme_provider.dart';
 import 'package:app_settings/app_settings.dart';
 import 'dart:async';
+
 class SettingsViewContentMobile extends StatefulWidget {
   const SettingsViewContentMobile({Key key}) : super(key: key);
   @override
   _SettingsViewContentMobileState createState() => _SettingsViewContentMobileState();
 }
+
 class _SettingsViewContentMobileState extends  State<SettingsViewContentMobile> {
-Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
 @override
   void initState() {
     /// Call out to intialize platform state.

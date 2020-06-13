@@ -10,7 +10,6 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      tilePadding: EdgeInsets.zero,
       title: ListTile(
           contentPadding: EdgeInsets.zero,
           leading: Icon(icon),
