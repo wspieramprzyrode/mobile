@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class InventoryObject {
   final String id;
   final String categoryId;

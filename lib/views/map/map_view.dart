@@ -130,7 +130,7 @@ List<Widget> _errorWidget(Object error) {
     ),
     Padding(
       padding: const EdgeInsets.only(top: 16),
-      child: Text('Error: ${error}'),
+      child: Text('Error: $error'),
     )
   ];
 }
