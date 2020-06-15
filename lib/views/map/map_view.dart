@@ -12,11 +12,12 @@ class MapView extends StatefulWidget {
   const MapView({Key key}) : super(key: key);
 
   @override
-  MapViewState createState() => new MapViewState();
+  MapViewState createState() => MapViewState();
 }
 
 class MapViewState extends State<MapView> {
   List<Marker> markers = [];
+
   @override
   void initState() {
     super.initState();
@@ -63,56 +64,54 @@ Widget _mapWidget(BuildContext context, AsyncSnapshot<Position> snapshot,
   }
 
   return Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: children);
+      mainAxisAlignment: MainAxisAlignment.center, children: children);
 }
 
 List<Widget> _dataWidget(
     AsyncSnapshot<Position> snapshot, List<Marker> markers) {
   return <Widget>[
     Flexible(
-        child: FlutterMap(
-      options: MapOptions(
-        center: LatLng(snapshot.data.latitude, snapshot.data.longitude),
-        zoom: 13.0,
-        plugins: [
-          MarkerClusterPlugin(),
+      child: FlutterMap(
+        options: MapOptions(
+          center: LatLng(snapshot.data.latitude, snapshot.data.longitude),
+          plugins: [
+            MarkerClusterPlugin(),
+          ],
+        ),
+        layers: [
+          TileLayerOptions(
+              urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              subdomains: ['a', 'b', 'c']),
+          MarkerClusterLayerOptions(
+            maxClusterRadius: 120,
+            size: Size(40, 40),
+            fitBoundsOptions: FitBoundsOptions(
+              padding: EdgeInsets.all(50),
+            ),
+            markers: markers,
+            polygonOptions: PolygonOptions(
+                borderColor: Colors.blueAccent,
+                color: Colors.black12,
+                borderStrokeWidth: 3),
+            builder: (context, markers) {
+              return FloatingActionButton(
+                onPressed: null,
+                child: Text(markers.length.toString()),
+              );
+            },
+          ),
         ],
       ),
-      layers: [
-        new TileLayerOptions(
-            urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            subdomains: ['a', 'b', 'c']),
-        new MarkerClusterLayerOptions(
-          maxClusterRadius: 120,
-          size: Size(40, 40),
-          fitBoundsOptions: FitBoundsOptions(
-            padding: EdgeInsets.all(50),
-          ),
-          markers: markers,
-          polygonOptions: PolygonOptions(
-              borderColor: Colors.blueAccent,
-              color: Colors.black12,
-              borderStrokeWidth: 3),
-          builder: (context, markers) {
-            return FloatingActionButton(
-              child: Text(markers.length.toString()),
-              onPressed: null,
-            );
-          },
-        ),
-      ],
-    ))
+    )
   ];
 }
 
 List<Widget> _progessWidget() {
   return <Widget>[
     const SizedBox(
-      child: const CircularProgressIndicator(),
       width: 60,
       height: 60,
+      child: CircularProgressIndicator(),
     ),
     const Padding(
       padding: EdgeInsets.only(top: 16),
@@ -136,17 +135,15 @@ List<Widget> _errorWidget(Object error) {
 }
 
 List<Marker> _prepareMarkers(List<InventoryObject> data) {
-  List<Marker> m = [];
-  data.forEach((element) {
-    m.add(Marker(
-      width: 20.0,
-      height: 20.0,
-      point:
-          LatLng(element.coordinates.latitude, element.coordinates.longitude),
-      builder: (ctx) => new Container(
-        child: new FlutterLogo(),
-      ),
-    ));
-  });
-  return m;
+  return data
+      .map((element) => Marker(
+            width: 20.0,
+            height: 20.0,
+            point: LatLng(
+              element.coordinates.latitude,
+              element.coordinates.longitude,
+            ),
+            builder: (ctx) => FlutterLogo(),
+          ))
+      .toList();
 }

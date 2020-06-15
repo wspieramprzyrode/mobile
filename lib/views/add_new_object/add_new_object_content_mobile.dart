@@ -19,8 +19,8 @@ class AddNewObjectContentMobile extends StatefulWidget {
 class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   GeolocationService geolocation;
   int currStep = 0;
-  static var _focusNode = FocusNode();
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  static final _focusNode = FocusNode();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   File _image;
 
   final picker = ImagePicker();
@@ -41,7 +41,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
     });
   }
 
-  void _getLocation() async {
+  Future<void> _getLocation() async {
     final position = await geolocation.getUserLocation();
     setState(() {
       userLocation = position;
@@ -67,43 +67,39 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   @override
   Widget build(BuildContext context) {
     geolocation = Provider.of<GeolocationService>(context);
-    List<Step> steps = [
+    final List<Step> steps = [
       Step(
           title: Text(AppLocalization.fetchLocation),
           subtitle: Text('Wykonaj jak najblizej obiektu'),
           isActive: true,
           //state: StepState.editing,
-          state: StepState.indexed,
           content: RaisedButton(
-            child: Text("Pobierz"),
             onPressed: _getLocation,
+            child: Text("Pobierz"),
           )),
       Step(
           title: Text(AppLocalization.choicePhoto),
           isActive: true,
-          state: StepState.indexed,
           content: Row(
             children: [
               RaisedButton(
-                child: Text(AppLocalization.takePhoto),
                 onPressed: takeImage,
+                child: Text(AppLocalization.takePhoto),
               ),
               Spacer(),
               RaisedButton(
-                child: Text(AppLocalization.photoFromGallery),
                 onPressed: getImage,
+                child: Text(AppLocalization.photoFromGallery),
               )
             ],
           )),
       Step(
           title: Text(AppLocalization.choiceObjectCategory),
           isActive: true,
-          state: StepState.indexed,
           content: CategoryDropdown()), ////
     ];
 
-    return Container(
-        child: Form(
+    return Form(
       key: _formKey,
       child: ListView(children: <Widget>[
         Stepper(
@@ -145,6 +141,6 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
           },
         )
       ]),
-    ));
+    );
   }
 }

@@ -1,3 +1,5 @@
+// TODO fix later with proper translations handling
+// ignore: avoid_classes_with_only_static_members
 class AppLocalization {
   static String get appName => 'Wspieram Przyrodę';
   static String get home => 'Start';

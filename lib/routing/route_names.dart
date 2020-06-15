@@ -1,4 +1,4 @@
-const String HomeRoute = 'home';
-const String AddNewObjectRoute = 'add_object';
-const String SettingsRoute = 'settings';
-const String MapRoute = 'map';
+const String homeRoute = 'home';
+const String addNewObjectRoute = 'add_object';
+const String settingsRoute = 'settings';
+const String mapRoute = 'map';

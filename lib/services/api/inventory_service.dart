@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:wspieramprzyrode/datamodels/Invetory_category.dart';
+import 'package:wspieramprzyrode/datamodels/invetory_category.dart';
 import 'package:wspieramprzyrode/datamodels/inventory_object.dart';
 import 'package:dio/dio.dart';
 import 'package:wspieramprzyrode/services/api/client.dart';
@@ -16,9 +16,9 @@ class InventoryService {
     );
     if (response.statusCode == 200) {
       try {
-        final decodedResponse = json.decode(response.data) as List;
+        final decodedResponse = json.decode(response.data as String) as List;
         return decodedResponse
-            .map((obj) => InventoryObject.fromJson(obj))
+            .map((obj) => InventoryObject.fromJson(obj as Map<String, dynamic>))
             .toList();
       } catch (err) {
         return [];
@@ -35,9 +35,9 @@ class InventoryService {
     );
     if (response.statusCode == 200) {
       try {
-        final decodedResponse = json.decode(response.data) as List;
+        final decodedResponse = json.decode(response.data as String) as List;
         return decodedResponse
-            .map((obj) => InventoryCategory.fromJson(obj))
+            .map((obj) => InventoryCategory.fromJson(obj as Map<String, dynamic>))
             .toList();
       } catch (err) {
         return [];

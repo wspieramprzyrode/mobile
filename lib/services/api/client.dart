@@ -5,17 +5,12 @@ class ApiClient {
   Dio _dio;
 
   ApiClient(String url) {
-    BaseOptions options = BaseOptions(baseUrl: url);
-    _dio = new Dio(options);
+    final BaseOptions options = BaseOptions(baseUrl: url);
+    _dio = Dio(options);
     _dio.interceptors.add(
       PrettyDioLogger(
         requestHeader: true,
         requestBody: true,
-        responseBody: true,
-        responseHeader: false,
-        error: true,
-        compact: true,
-        maxWidth: 90,
       ),
     );
   }

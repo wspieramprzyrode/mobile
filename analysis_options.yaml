@@ -1,0 +1,6 @@
+include: package:lint/analysis_options.yaml
+
+linter:
+  rules:
+    # It's disabled because performance improvement is insignificant
+    prefer_const_constructors: false

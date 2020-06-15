@@ -1,17 +1,18 @@
+import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 
-
-class GeolocationService  {
-  var _geolocator = Geolocator();
+class GeolocationService {
+  final Geolocator _geolocator = Geolocator();
   Position _currentLocation;
+
   Position get currentLocation => _currentLocation;
 
-  Future<Position> getUserLocation() async{
+  Future<Position> getUserLocation() async {
     try {
-      var userLocation = await _geolocator.getCurrentPosition(desiredAccuracy:LocationAccuracy.best);
+      final userLocation = await _geolocator.getCurrentPosition();
       _currentLocation = userLocation;
     } on Exception catch (e) {
-      print('Could not get location: ${e.toString()}');
+      debugPrint('Could not get location: ${e.toString()}');
     }
 
     return _currentLocation;

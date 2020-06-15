@@ -8,13 +8,13 @@ import 'package:wspieramprzyrode/views/settings/settings_view.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case HomeRoute:
+    case homeRoute:
       return _getPageRoute(HomeView(), settings);
-    case AddNewObjectRoute:
+    case addNewObjectRoute:
       return _getPageRoute(AddNewObjectView(), settings);
-    case SettingsRoute:
+    case settingsRoute:
       return _getPageRoute(SettingsView(), settings);
-    case MapRoute:
+    case mapRoute:
       return _getPageRoute(MapView(), settings);
     default:
       return MaterialPageRoute(

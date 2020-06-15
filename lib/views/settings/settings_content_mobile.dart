@@ -1,17 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:theme_provider/theme_provider.dart';
 import 'package:app_settings/app_settings.dart';
-import 'dart:async';
 
 class SettingsViewContentMobile extends StatefulWidget {
   const SettingsViewContentMobile({Key key}) : super(key: key);
+
   @override
-  _SettingsViewContentMobileState createState() => _SettingsViewContentMobileState();
+  _SettingsViewContentMobileState createState() =>
+      _SettingsViewContentMobileState();
 }
 
-class _SettingsViewContentMobileState extends  State<SettingsViewContentMobile> {
-
-@override
+class _SettingsViewContentMobileState extends State<SettingsViewContentMobile> {
+  @override
   void initState() {
     /// Call out to intialize platform state.
     initPlatformState();
@@ -25,6 +27,7 @@ class _SettingsViewContentMobileState extends  State<SettingsViewContentMobile> 
     // setState to update our non-existent appearance.
     if (!mounted) return;
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -33,22 +36,21 @@ class _SettingsViewContentMobileState extends  State<SettingsViewContentMobile> 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         RaisedButton(
-        child: const Text("Location"),
-        onPressed: () {
-          AppSettings.openLocationSettings();
-        },
-      ),
+          onPressed: () {
+            AppSettings.openLocationSettings();
+          },
+          child: const Text("Location"),
+        ),
         RaisedButton(
-          child: const Text("Wybierz kolorystykę"),
           onPressed: () {
             showDialog(
                 context: context,
                 builder: (_) => ThemeConsumer(child: ThemeDialog()));
           },
+          child: const Text("Wybierz kolorystykę"),
         ),
       ],
     );

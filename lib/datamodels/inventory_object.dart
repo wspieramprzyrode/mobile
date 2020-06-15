@@ -4,11 +4,13 @@ class InventoryObject {
   final Coordinates coordinates;
 
   InventoryObject({this.id, this.categoryId, this.coordinates});
+
   factory InventoryObject.fromJson(Map<String, dynamic> json) {
     return InventoryObject(
       id: json['id'] as String,
       categoryId: json['category_id'] as String,
-      coordinates: Coordinates.fromJson(json['coordinates']),
+      coordinates:
+          Coordinates.fromJson(json['coordinates'] as Map<String, dynamic>),
     );
   }
 }
@@ -16,7 +18,9 @@ class InventoryObject {
 class Coordinates {
   final double latitude;
   final double longitude;
+
   Coordinates({this.latitude, this.longitude});
+
   factory Coordinates.fromJson(Map<String, dynamic> json) {
     return Coordinates(
       latitude: json['lat'] as double,
