@@ -10,6 +10,7 @@ class CategoryDropdown extends StatefulWidget {
 
 class _CategoryDropdownState extends State<CategoryDropdown> {
   String dropdownValue;
+
   @override
   Widget build(BuildContext context) {
     final apis = Provider.of<InventoryService>(context);
@@ -37,7 +38,11 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
                   );
                 }).toList(),
               );
+            } else {
+              return Container();
             }
+          } else {
+            return Container();
           }
         });
   }
