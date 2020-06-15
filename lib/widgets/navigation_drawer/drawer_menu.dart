@@ -11,11 +11,10 @@ class DrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpansionTile(
       title: ListTile(
-          contentPadding: EdgeInsets.zero,
-          leading: Icon(icon),
-          title: Text(
-            title,
-          )),
+        contentPadding: EdgeInsets.zero,
+        leading: Icon(icon),
+        title: Text(title),
+      ),
       children: children,
     );
   }
