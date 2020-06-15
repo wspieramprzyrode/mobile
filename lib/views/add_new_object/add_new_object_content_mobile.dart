@@ -10,16 +10,17 @@ import 'package:wspieramprzyrode/widgets/category_dropdown/category_dropdown.dar
 
 class AddNewObjectContentMobile extends StatefulWidget {
   const AddNewObjectContentMobile({Key key}) : super(key: key);
+
   @override
   _AddNewObjectContentMobileState createState() =>
-      new _AddNewObjectContentMobileState();
+      _AddNewObjectContentMobileState();
 }
 
 class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   GeolocationService geolocation;
   int currStep = 0;
-  static var _focusNode = new FocusNode();
-  GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  static var _focusNode = FocusNode();
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   File _image;
 
   final picker = ImagePicker();
@@ -31,6 +32,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
       _image = File(pickedFile.path);
     });
   }
+
   Future takeImage() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
 
@@ -55,6 +57,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   }
 
   Position userLocation;
+
   @override
   void dispose() {
     _focusNode.dispose();
@@ -65,17 +68,17 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   Widget build(BuildContext context) {
     geolocation = Provider.of<GeolocationService>(context);
     List<Step> steps = [
-      new Step(
+      Step(
           title: Text(AppLocalization.fetchLocation),
           subtitle: Text('Wykonaj jak najblizej obiektu'),
           isActive: true,
           //state: StepState.editing,
           state: StepState.indexed,
-          content: new RaisedButton(
+          content: RaisedButton(
             child: Text("Pobierz"),
             onPressed: _getLocation,
           )),
-      new Step(
+      Step(
           title: Text(AppLocalization.choicePhoto),
           isActive: true,
           state: StepState.indexed,
@@ -85,24 +88,24 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
                 child: Text(AppLocalization.takePhoto),
                 onPressed: takeImage,
               ),
-               Spacer(),
+              Spacer(),
               RaisedButton(
                 child: Text(AppLocalization.photoFromGallery),
                 onPressed: getImage,
               )
             ],
           )),
-      new Step(
+      Step(
           title: Text(AppLocalization.choiceObjectCategory),
           isActive: true,
           state: StepState.indexed,
-          content: CategoryDropdown()),////
+          content: CategoryDropdown()), ////
     ];
 
     return Container(
-        child: new Form(
+        child: Form(
       key: _formKey,
-      child: new ListView(children: <Widget>[
+      child: ListView(children: <Widget>[
         Stepper(
           steps: steps,
           currentStep: currStep,
@@ -116,7 +119,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
               // else {
               // Scaffold
               //     .of(context)
-              //     .showSnackBar(new SnackBar(content: new Text('$currStep')));
+              //     .showSnackBar(SnackBar(content: Text('$currStep')));
 
               // if (currStep == 1) {
               //   print('First Step');
