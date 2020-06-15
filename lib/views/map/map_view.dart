@@ -121,7 +121,7 @@ List<Widget> _progessWidget() {
   ];
 }
 
-List<Widget> _errorWidget(AsyncSnapshot<Position> snapshot) {
+List<Widget> _errorWidget(Object error) {
   return <Widget>[
     const Icon(
       Icons.error_outline,
@@ -130,7 +130,7 @@ List<Widget> _errorWidget(AsyncSnapshot<Position> snapshot) {
     ),
     Padding(
       padding: const EdgeInsets.only(top: 16),
-      child: Text('Error: ${snapshot.error}'),
+      child: Text('Error: ${error}'),
     )
   ];
 }

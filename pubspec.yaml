@@ -31,7 +31,7 @@ dependencies:
   get_it: ^4.0.2
   provider_architecture: ^1.1.1+1
   provider: ^4.1.2
-  http: ^0.12.1
+  dio: ^3.0.9
   theme_provider: ^0.3.3
   geolocator: ^5.3.1
   font_awesome_flutter: ^8.8.1
@@ -40,6 +40,8 @@ dependencies:
   permission_handler: ^5.0.0+hotfix.8
   app_settings: ^4.0.0
   shared_preferences: ^0.5.7+3
+  image_picker: ^0.6.7
+  flutter_secure_storage: ^3.3.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
