@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import 'package:wspieramprzyrode/i18n/localization.dart';
 import 'package:wspieramprzyrode/services/geolocation_service.dart';
 import 'package:wspieramprzyrode/widgets/category_dropdown/category_dropdown.dart';
 
@@ -15,11 +16,12 @@ class AddNewObjectContentMobile extends StatefulWidget {
 }
 
 class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
+  GeolocationService geolocation;
   int currStep = 0;
   static var _focusNode = new FocusNode();
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   File _image;
-  GeolocationService geolocation;
+
   final picker = ImagePicker();
 
   Future getImage() async {
@@ -42,7 +44,6 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
     setState(() {
       userLocation = position;
     });
-    print(userLocation);
   }
 
   @override
@@ -65,34 +66,34 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
     geolocation = Provider.of<GeolocationService>(context);
     List<Step> steps = [
       new Step(
-          title: const Text('Pobierz lokalizację'),
-          subtitle: const Text('Wykonaj jak najblizej obiektu'),
+          title: Text(AppLocalization.fetchLocation),
+          subtitle: Text('Wykonaj jak najblizej obiektu'),
           isActive: true,
           //state: StepState.editing,
           state: StepState.indexed,
           content: new RaisedButton(
-            child: new Text("Pobierz"),
+            child: Text("Pobierz"),
             onPressed: _getLocation,
           )),
       new Step(
-          title: const Text('Zrób zdjęcie'),
+          title: Text(AppLocalization.choicePhoto),
           isActive: true,
           state: StepState.indexed,
           content: Row(
             children: [
               RaisedButton(
-                child: new Text("Wykonaj zdjęcie"),
+                child: Text(AppLocalization.takePhoto),
                 onPressed: takeImage,
               ),
                Spacer(),
               RaisedButton(
-                child: new Text("Wybierz z galerii"),
+                child: Text(AppLocalization.photoFromGallery),
                 onPressed: getImage,
               )
             ],
           )),
       new Step(
-          title: const Text('Wybierz typ'),
+          title: Text(AppLocalization.choiceObjectCategory),
           isActive: true,
           state: StepState.indexed,
           content: CategoryDropdown()),////

@@ -22,7 +22,6 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
               return DropdownButton(
                 icon: Icon(Icons.arrow_downward),
                 iconSize: 24,
-                //  elevation: 16,
                 underline: Container(
                   height: 2,
                 ),
