@@ -1,30 +1,38 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'inventory_object.g.dart';
+
+@JsonSerializable(explicitToJson: true)
 class InventoryObject {
+  @JsonKey(name: 'id')
   final String id;
+
+  @JsonKey(name: 'category_id')
   final String categoryId;
+
+  @JsonKey(name: 'coordinates')
   final Coordinates coordinates;
 
   InventoryObject({this.id, this.categoryId, this.coordinates});
 
-  factory InventoryObject.fromJson(Map<String, dynamic> json) {
-    return InventoryObject(
-      id: json['id'] as String,
-      categoryId: json['category_id'] as String,
-      coordinates:
-          Coordinates.fromJson(json['coordinates'] as Map<String, dynamic>),
-    );
-  }
+  factory InventoryObject.fromJson(Map<String, dynamic> json) =>
+      _$InventoryObjectFromJson(json);
+
+  Map<String, dynamic> toJson() => _$InventoryObjectToJson(this);
 }
 
+@JsonSerializable()
 class Coordinates {
+  @JsonKey(name: 'lat')
   final double latitude;
+
+  @JsonKey(name: 'lng')
   final double longitude;
 
   Coordinates({this.latitude, this.longitude});
 
-  factory Coordinates.fromJson(Map<String, dynamic> json) {
-    return Coordinates(
-      latitude: json['lat'] as double,
-      longitude: json['lng'] as double,
-    );
-  }
+  factory Coordinates.fromJson(Map<String, dynamic> json) =>
+      _$CoordinatesFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CoordinatesToJson(this);
 }
