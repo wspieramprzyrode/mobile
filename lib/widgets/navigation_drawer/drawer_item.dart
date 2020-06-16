@@ -11,20 +11,13 @@ class DrawerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () {
-          locator<NavigationService>().navigateTo(navigationPath);
-          Navigator.pop(context);
-        },
-        child: Padding(
-            padding: const EdgeInsets.only(left: 10, top: 20),
-            child: Row(
-              children: <Widget>[
-                Icon(icon),
-                Text(
-                  title,
-                )
-              ],
-            )));
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(title),
+      onTap: () {
+        locator<NavigationService>().navigateTo(navigationPath);
+        Navigator.pop(context);
+      },
+    );
   }
 }

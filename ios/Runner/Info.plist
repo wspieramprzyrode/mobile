@@ -12,6 +12,8 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>wspieramprzyrode</string>
+	<key>CFBundleDisplayName</key>
+	<string>Wspieram przyrodę</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -41,5 +43,17 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs access to location when in the background.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open and in the background.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo to send objestc photos.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>ss</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>ddd</string>
 </dict>
 </plist>

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:wspieramprzyrode/routing/route_names.dart';
-import 'package:wspieramprzyrode/views/about/about.dart';
 import 'package:wspieramprzyrode/views/add_new_object/add_new_object_view.dart';
 import 'package:wspieramprzyrode/views/home/home_view.dart';
+import 'package:wspieramprzyrode/views/map/map_view.dart';
 import 'package:wspieramprzyrode/views/settings/settings_view.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case HomeRoute:
+    case homeRoute:
       return _getPageRoute(HomeView(), settings);
-    case AboutRoute:
-      return _getPageRoute(AboutView(), settings);
-    case AddNewObjectRoute:
+    case addNewObjectRoute:
       return _getPageRoute(AddNewObjectView(), settings);
-    case SettingsRoute:
+    case settingsRoute:
       return _getPageRoute(SettingsView(), settings);
+    case mapRoute:
+      return _getPageRoute(MapView(), settings);
     default:
       return MaterialPageRoute(
           builder: (_) => Scaffold(

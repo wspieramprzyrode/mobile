@@ -1,16 +1,56 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class SettingsViewContentMobile extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:theme_provider/theme_provider.dart';
+import 'package:app_settings/app_settings.dart';
+
+class SettingsViewContentMobile extends StatefulWidget {
   const SettingsViewContentMobile({Key key}) : super(key: key);
+
+  @override
+  _SettingsViewContentMobileState createState() =>
+      _SettingsViewContentMobileState();
+}
+
+class _SettingsViewContentMobileState extends State<SettingsViewContentMobile> {
+  @override
+  void initState() {
+    /// Call out to intialize platform state.
+    initPlatformState();
+    super.initState();
+  }
+
+  /// Initialize platform state.
+  Future<void> initPlatformState() async {
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
-          'Welcome',
+        RaisedButton(
+          onPressed: () {
+            AppSettings.openLocationSettings();
+          },
+          child: const Text("Location"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (_) => ThemeConsumer(child: ThemeDialog()));
+          },
+          child: const Text("Wybierz kolorystykę"),
         ),
       ],
     );

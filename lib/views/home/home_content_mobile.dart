@@ -6,12 +6,9 @@ class HomeContentMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          'Welcome',
-        ),
+      children: const <Widget>[
+        Text('Welcome'),
       ],
     );
   }
