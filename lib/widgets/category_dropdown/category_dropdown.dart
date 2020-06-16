@@ -19,7 +19,7 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
     super.initState();
   }
 
-  void selectData(newValue) {
+  void selectData(String newValue) {
     setState(() {
       dropdownValue = newValue;
     });
@@ -41,7 +41,7 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
               underline: Container(
                 height: 2,
               ),
-              onChanged: (newValue) {
+              onChanged: (String newValue) {
                 selectData(newValue);
               },
               items: categories.data.map((InventoryCategory value) {
