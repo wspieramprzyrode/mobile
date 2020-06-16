@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import 'package:wspieramprzyrode/datamodels/Invetory_category.dart';
 import 'package:wspieramprzyrode/i18n/localization.dart';
 import 'package:wspieramprzyrode/services/geolocation_service.dart';
 import 'package:wspieramprzyrode/widgets/category_dropdown/category_dropdown.dart';
@@ -21,7 +22,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   static var _focusNode = new FocusNode();
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   File _image;
-
+  String categoryId;
   final picker = ImagePicker();
 
   Future getImage() async {
@@ -31,6 +32,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
       _image = File(pickedFile.path);
     });
   }
+
   Future takeImage() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
 
@@ -85,7 +87,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
                 child: Text(AppLocalization.takePhoto),
                 onPressed: takeImage,
               ),
-               Spacer(),
+              Spacer(),
               RaisedButton(
                 child: Text(AppLocalization.photoFromGallery),
                 onPressed: getImage,
@@ -96,7 +98,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
           title: Text(AppLocalization.choiceObjectCategory),
           isActive: true,
           state: StepState.indexed,
-          content: CategoryDropdown()),////
+          content: CategoryDropdown(categoryId: categoryId))
     ];
 
     return Container(
