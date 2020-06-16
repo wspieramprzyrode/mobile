@@ -15,13 +15,13 @@ class NavigationDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerItem(AppLocalization.home, HomeRoute, Icons.home),
+            DrawerItem(AppLocalization.home, homeRoute, Icons.home),
             DrawerMenu(AppLocalization.birds, FaIcon(FontAwesomeIcons.kiwiBird).icon, <Widget>[
-              DrawerItem(AppLocalization.birdsMap, MapRoute, Icons.map),
-              DrawerItem(AppLocalization.birdsAddObject, AddNewObjectRoute, Icons.add),
+              DrawerItem(AppLocalization.birdsMap, mapRoute, Icons.map),
+              DrawerItem(AppLocalization.birdsAddObject, addNewObjectRoute, Icons.add),
             ]),
             Divider(height: 5.0),
-            DrawerItem(AppLocalization.settings, SettingsRoute, Icons.settings),
+            DrawerItem(AppLocalization.settings, settingsRoute, Icons.settings),
           ],
         ),
       ),

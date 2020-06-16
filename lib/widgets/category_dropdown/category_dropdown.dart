@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wspieramprzyrode/datamodels/Invetory_category.dart';
+import 'package:wspieramprzyrode/datamodels/invetory_category.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
 
 class CategoryDropdown extends StatefulWidget {
@@ -8,7 +8,7 @@ class CategoryDropdown extends StatefulWidget {
   const CategoryDropdown({Key key, @required this.categoryId})
       : super(key: key);
   @override
-  State<StatefulWidget> createState() => new _CategoryDropdownState();
+  State<StatefulWidget> createState() => _CategoryDropdownState();
 }
 
 class _CategoryDropdownState extends State<CategoryDropdown> {
@@ -30,7 +30,7 @@ class _CategoryDropdownState extends State<CategoryDropdown> {
     final apis = Provider.of<InventoryService>(context);
     return FutureBuilder<List<InventoryCategory>>(
         future: apis.getCategories(),
-        initialData: [],
+        initialData: const [],
         builder: (context, categories) {
           Widget w;
           if (categories.connectionState == ConnectionState.done &&
