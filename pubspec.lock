@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.1"
+  bloc:
+    dependency: "direct main"
+    description:
+      name: bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -244,6 +251,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_bloc:
+    dependency: "direct main"
+    description:
+      name: flutter_bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.1"
   flutter_cache_manager:
     dependency: transitive
     description:
@@ -516,13 +530,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.9"
-  observable_ish:
-    dependency: transitive
-    description:
-      name: observable_ish
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.4"
   package_config:
     dependency: transitive
     description:
@@ -635,13 +642,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.1.2"
-  provider_architecture:
-    dependency: "direct main"
-    description:
-      name: provider_architecture
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.1+1"
   pub_semver:
     dependency: transitive
     description:
