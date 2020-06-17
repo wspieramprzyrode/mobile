@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:wspieramprzyrode/datamodels/Invetory_category.dart';
 import 'package:wspieramprzyrode/i18n/localization.dart';
 import 'package:wspieramprzyrode/services/geolocation_service.dart';
 import 'package:wspieramprzyrode/widgets/category_dropdown/category_dropdown.dart';
