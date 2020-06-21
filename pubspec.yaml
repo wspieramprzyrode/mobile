@@ -28,21 +28,21 @@ dependencies:
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.8.1
   theme_provider: ^0.3.3
-  image_picker: ^0.6.7
+  image_picker: ^0.6.7 # only mobile
 
   # architecture, di and tools
   responsive_builder: ^0.2.0+2
   get_it: ^4.0.2
   provider_architecture: ^1.1.1+1
   provider: ^4.1.2
-  app_settings: ^4.0.0
-  permission_handler: ^5.0.0+hotfix.8
+  app_settings: ^4.0.0 # only mobile
+  permission_handler: ^5.0.0+hotfix.8 # only mobile
   lint: ^1.2.0
 
   # maps and location
   flutter_map: ^0.8.0
   flutter_map_marker_cluster: any
-  geolocator: ^5.3.1
+  geolocator: ^5.3.1 # only mobile
 
   # storage
   hive: ^1.4.1+1
