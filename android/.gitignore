@@ -5,3 +5,6 @@ gradle-wrapper.jar
 /gradlew.bat
 /local.properties
 GeneratedPluginRegistrant.java
+
+# Intellij gen files
+/app/src/**/gen/
