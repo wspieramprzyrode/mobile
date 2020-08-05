@@ -33,11 +33,12 @@ dependencies:
   # architecture, di and tools
   responsive_builder: ^0.2.0+2
   get_it: ^4.0.2
-  provider_architecture: ^1.1.1+1
   provider: ^4.1.2
   app_settings: ^4.0.0 # only mobile
   permission_handler: ^5.0.0+hotfix.8 # only mobile
   lint: ^1.2.0
+  flutter_bloc: ^4.0.1
+  bloc: ^4.0.0
 
   # maps and location
   flutter_map: ^0.8.0

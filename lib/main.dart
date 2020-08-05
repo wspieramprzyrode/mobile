@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_driver/driver_extension.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
 import 'package:wspieramprzyrode/services/geolocation_service.dart';
+import 'package:wspieramprzyrode/simple_bloc_delegate.dart';
 import 'package:wspieramprzyrode/views/layout_template/layout_template.dart';
 import 'package:theme_provider/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -16,19 +17,13 @@ void main() {
   // See https://flutter.dev/testing/ for more info.
   enableFlutterDriverExtension();
   WidgetsFlutterBinding.ensureInitialized();
+  BlocSupervisor.delegate = SimpleBlocDelegate();
+
   runApp(MultiProvider(
     providers: [
-      Provider(create: (_) {
-        final dio = Dio();
-        dio.interceptors.add(
-          PrettyDioLogger(requestHeader: true, requestBody: true),
-        );
-        return dio;
-      }),
-      Provider(create: (_) => GeolocationService()),
-      ProxyProvider<Dio, InventoryService>(
-        update: (_, dio, __) => InventoryService(dio),
-      ),
+      Provider(create: (_) => locator.get<Dio>()),
+      Provider(create: (_) => locator.get<GeolocationService>()),
+      Provider(create: (_) => locator.get<InventoryService>()),
     ],
     child: MyApp(),
   ));
