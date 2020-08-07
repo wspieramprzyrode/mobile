@@ -19,9 +19,21 @@ allprojects {
 }
 
 rootProject.buildDir = '../build'
+
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
+
+    project.evaluationDependsOn(':app')
+
+    afterEvaluate {project ->
+        if (project.hasProperty("android") && project.property("android").compileSdkVersion.equals("android-R")) {
+            android {
+                compileSdkVersion 30
+            }
+        }
+    }
 }
+
 subprojects {
     project.evaluationDependsOn(':app')
 }
