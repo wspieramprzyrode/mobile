@@ -31,6 +31,9 @@ class MapBloc extends Bloc<MapEvent, MapState> {
   final GeolocationService geolocationService;
   final InventoryService inventoryService;
 
+  Position _userPosition;
+  List<InventoryObject> _objects = [];
+
   MapBloc({
     @required this.geolocationService,
     @required this.inventoryService,
@@ -51,12 +54,20 @@ class MapBloc extends Bloc<MapEvent, MapState> {
 
   Stream<MapState> _initMap() async* {
     yield MapLoading();
+    await getObjects();
     try {
-      final position = await geolocationService.getUserLocation();
-      final objects = await inventoryService.getObjects();
-      yield MapLoaded(position: position, objects: objects);
+      _userPosition = await geolocationService.getUserLocation();
+      yield MapLoaded(position: _userPosition, objects: _objects);
     } catch (_) {
       yield MapError();
+    }
+  }
+
+  Future<void> getObjects() async {
+    try {
+      _objects = await inventoryService.getObjects();
+    } catch (_) {
+      debugPrint('failed to get objects');
     }
   }
 }
