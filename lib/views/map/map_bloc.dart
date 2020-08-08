@@ -37,11 +37,7 @@ class MapBloc extends Bloc<MapEvent, MapState> {
   MapBloc({
     @required this.geolocationService,
     @required this.inventoryService,
-  })  : assert(geolocationService != null),
-        assert(inventoryService != null);
-
-  @override
-  MapState get initialState => MapEmpty();
+  }) : super(MapEmpty());
 
   @override
   Stream<MapState> mapEventToState(MapEvent event) async* {
