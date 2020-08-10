@@ -30,7 +30,7 @@ class MapViewState extends State<MapView> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MapBloc, MapState>(
-      bloc: mapBloc,
+      cubit: mapBloc,
       builder: (context, state) {
         if (state is MapLoading) {
           return _progressWidget();

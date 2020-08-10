@@ -3,7 +3,7 @@ description: WspieramPrzyrode Mobile App
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -37,13 +37,13 @@ dependencies:
   app_settings: ^4.0.0 # only mobile
   permission_handler: ^5.0.0+hotfix.8 # only mobile
   lint: ^1.2.0
-  flutter_bloc: ^4.0.1
-  bloc: ^4.0.0
+  flutter_bloc: ^6.0.1
+  bloc: ^6.0.1
 
   # maps and location
-  flutter_map: ^0.8.0
+  flutter_map: "0.10.1+1" # only mobile
   flutter_map_marker_cluster: any
-  geolocator: ^5.3.1 # only mobile
+  geolocator: ^5.3.1 # only mobile - replace with location 3.0.2 (works with web)
 
   # storage
   hive: ^1.4.1+1
@@ -68,4 +68,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
