@@ -42,7 +42,11 @@ dependencies:
 
   # maps and location
   flutter_map: "0.10.1+1" # only mobile
-  flutter_map_marker_cluster: any
+  flutter_map_marker_cluster:
+    git:
+      url: https://github.com/Xennis/flutter_map_marker_cluster.git
+      ref: fluttermap-10
+
   geolocator: ^5.3.1 # only mobile - replace with location 3.0.2 (works with web)
 
   # storage

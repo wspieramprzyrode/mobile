@@ -290,14 +290,23 @@ packages:
       name: flutter_map
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.2"
+    version: "0.10.1+1"
   flutter_map_marker_cluster:
     dependency: "direct main"
     description:
-      name: flutter_map_marker_cluster
+      path: "."
+      ref: fluttermap-10
+      resolved-ref: b39a1b490f77268a00c5362af1b2315f42e5868d
+      url: "https://github.com/Xennis/flutter_map_marker_cluster.git"
+    source: git
+    version: "0.2.8"
+  flutter_map_marker_popup:
+    dependency: transitive
+    description:
+      name: flutter_map_marker_popup
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.7"
+    version: "0.1.4"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -467,6 +476,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  lists:
+    dependency: transitive
+    description:
+      name: lists
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.6"
   location_permissions:
     dependency: transitive
     description:
@@ -495,6 +511,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
+  mgrs_dart:
+    dependency: transitive
+    description:
+      name: mgrs_dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   mime:
     dependency: transitive
     description:
@@ -635,6 +658,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.13"
+  proj4dart:
+    dependency: transitive
+    description:
+      name: proj4dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.5"
   provider:
     dependency: "direct main"
     description:
@@ -899,6 +929,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  unicode:
+    dependency: transitive
+    description:
+      name: unicode
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.4"
   uuid:
     dependency: transitive
     description:
@@ -962,6 +999,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.4"
+  wkt_parser:
+    dependency: transitive
+    description:
+      name: wkt_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.7"
   yaml:
     dependency: transitive
     description:
