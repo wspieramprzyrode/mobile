@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wspieramprzyrode/datamodels/invetory_category.dart';
+import 'package:wspieramprzyrode/models/invetory_category.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
 
 class CategoryDropdown extends StatefulWidget {
