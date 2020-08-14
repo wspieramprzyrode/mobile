@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_driver/driver_extension.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
-import 'package:wspieramprzyrode/services/geolocation_service.dart';
+import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
 import 'package:wspieramprzyrode/logging_bloc_observer.dart';
 import 'package:wspieramprzyrode/views/layout_template/layout_template.dart';
 import 'package:theme_provider/theme_provider.dart';

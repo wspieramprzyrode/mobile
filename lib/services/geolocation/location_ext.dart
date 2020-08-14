@@ -6,12 +6,12 @@ extension LocationDateExt on LocationData {
     return GpsLocation(
       latitude,
       longitude,
-      accuracy,
-      altitude,
-      speed,
-      speedAccuracy,
-      heading,
-      time,
+      accuracy: accuracy,
+      altitude: altitude,
+      speed: speed,
+      speedAccuracy: speedAccuracy,
+      heading: heading,
+      time: time,
     );
   }
 }

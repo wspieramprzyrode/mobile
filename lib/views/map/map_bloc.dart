@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:wspieramprzyrode/models/gps.dart';
 import 'package:wspieramprzyrode/models/inventory_object.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
-import 'package:wspieramprzyrode/services/geolocation_service.dart';
+import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
 
 enum MapEvent { loadMap }
 

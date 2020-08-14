@@ -39,6 +39,7 @@ dependencies:
   lint: ^1.2.0
   flutter_bloc: ^6.0.1
   bloc: ^6.0.1
+  js: ^0.6.0 # mapping js interfaces to dart
 
   # maps and location
   flutter_map: "0.10.1+1" # only mobile

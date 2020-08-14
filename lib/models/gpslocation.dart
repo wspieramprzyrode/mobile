@@ -38,12 +38,12 @@ class GpsLocation {
 
   const GpsLocation(
     this.latitude,
-    this.longitude,
-    this.accuracy,
-    this.altitude,
-    this.speed,
-    this.speedAccuracy,
-    this.heading,
-    this.time,
-  );
+    this.longitude, {
+    this.accuracy = 0.0,
+    this.altitude = 0.0,
+    this.speed = 0.0,
+    this.speedAccuracy = 0.0,
+    this.heading = 0.0,
+    this.time = 0.0,
+  });
 }
