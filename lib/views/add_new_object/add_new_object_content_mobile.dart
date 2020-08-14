@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
@@ -21,24 +19,24 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   int currStep = 0;
   static final _focusNode = FocusNode();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  File _image;
+  // File _image;
   String categoryId;
   final picker = ImagePicker();
 
   Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    // final pickedFile = await picker.getImage(source: ImageSource.gallery);
 
-    setState(() {
-      _image = File(pickedFile.path);
-    });
+    // setState(() {
+    // _image = File(pickedFile.path);
+    // });
   }
 
   Future takeImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    // final pickedFile = await picker.getImage(source: ImageSource.camera);
 
-    setState(() {
-      _image = File(pickedFile.path);
-    });
+    // setState(() {
+    // _image = File(pickedFile.path);
+    // });
   }
 
   Future<void> _getLocation() async {
@@ -96,7 +94,6 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
       Step(
           title: Text(AppLocalization.choiceObjectCategory),
           isActive: true,
-          state: StepState.indexed,
           content: CategoryDropdown(categoryId: categoryId))
     ];
 
