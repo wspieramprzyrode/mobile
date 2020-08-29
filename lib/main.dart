@@ -2,12 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_driver/driver_extension.dart';
+import 'package:provider/provider.dart';
+import 'package:theme_provider/theme_provider.dart';
+import 'package:wspieramprzyrode/logging_bloc_observer.dart';
+import 'package:wspieramprzyrode/routing/route_names.dart';
+import 'package:wspieramprzyrode/routing/router.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
 import 'package:wspieramprzyrode/services/geolocation_service.dart';
-import 'package:wspieramprzyrode/logging_bloc_observer.dart';
-import 'package:wspieramprzyrode/views/layout_template/layout_template.dart';
-import 'package:theme_provider/theme_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:wspieramprzyrode/services/navigation_service.dart';
+
 import 'i18n/localization.dart';
 import 'locator.dart';
 
@@ -44,7 +47,11 @@ class MyApp extends StatelessWidget {
         title: AppLocalization.appName,
         debugShowCheckedModeBanner: false,
         home: ThemeConsumer(
-          child: LayoutTemplate(),
+          child: Navigator(
+            key: locator<NavigationService>().navigatorKey,
+            onGenerateRoute: generateRoute,
+            initialRoute: homeRoute,
+          ),
         ),
       ),
     );

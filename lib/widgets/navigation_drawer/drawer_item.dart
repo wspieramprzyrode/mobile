@@ -16,7 +16,6 @@ class DrawerItem extends StatelessWidget {
       title: Text(title),
       onTap: () {
         locator<NavigationService>().navigateTo(navigationPath);
-        Navigator.pop(context);
       },
     );
   }
