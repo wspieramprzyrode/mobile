@@ -35,7 +35,7 @@ dependencies:
 
   # architecture, di and tools
   responsive_builder: ^0.3.0
-  get_it: ^4.0.2
+  get_it: ^5.0.1
   provider: ^4.3.2+2
   lint: ^1.5.1
   flutter_bloc: ^6.1.1
@@ -47,7 +47,7 @@ dependencies:
   permission_handler: ^5.0.1+1
 
   # maps and location
-  flutter_map: "0.10.1+1"
+  flutter_map: ^0.10.1+1
   flutter_map_marker_cluster: any
   ## only mobile
   location: ^3.1.0
