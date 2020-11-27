@@ -1,9 +1,13 @@
 @JS('navigator.geolocation')
 library jslocation;
 
-import 'package:js/js.dart';
+import 'dart:async';
 
-@JS('getCurrentPosition') //Geolocation API's getCurrentPosition
+import 'package:flutter/foundation.dart';
+import 'package:js/js.dart';
+import 'gpslocation.dart';
+
+@JS('getCurrentPosition') // Geolocation API's getCurrentPosition
 external void getCurrentPosition(Function(GeolocationPosition pos) success);
 
 @JS()
@@ -15,6 +19,7 @@ class GeolocationCoordinates {
   });
 
   external double get latitude;
+
   external double get longitude;
 }
 
@@ -24,4 +29,20 @@ class GeolocationPosition {
   external factory GeolocationPosition({GeolocationCoordinates coords});
 
   external GeolocationCoordinates get coords;
+}
+
+Future<GpsLocation> getCurrentLocation() {
+  final Completer<GpsLocation> completer = Completer();
+  try {
+    getCurrentPosition(allowInterop((pos) {
+      completer.complete(
+        GpsLocation(pos.coords.latitude, pos.coords.longitude),
+      );
+    }));
+  } on Exception catch (e, st) {
+    debugPrint('Could not get location: ${e.toString()}');
+    completer.completeError(e, st);
+  }
+
+  return completer.future;
 }

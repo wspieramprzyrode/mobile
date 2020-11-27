@@ -1,8 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:location/location.dart';
-import 'package:wspieramprzyrode/models/gpslocation.dart';
-import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
-import 'package:wspieramprzyrode/services/geolocation/location_ext.dart';
+
+import '../geolocation/geolocation_service.dart';
+import '../geolocation/gpslocation.dart';
+import '../geolocation/location_ext.dart';
+
+/// Create a [GeolocationMobile] service.
+///
+/// Used from conditional imports, matches the definition in `geolocation_stub.dart`.
+GeolocationService createGeolocationService() => GeolocationMobile();
 
 class GeolocationMobile with GeolocationService {
   final Location location = Location();

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:wspieramprzyrode/i18n/localization.dart';
-import 'package:wspieramprzyrode/models/gps.dart';
-import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
-import 'package:wspieramprzyrode/widgets/category_dropdown/category_dropdown.dart';
+
+import '../../i18n/localization.dart';
+import '../../services/geolocation/geolocation_service.dart';
+import '../../services/geolocation/gpslocation.dart';
+import '../../widgets/category_dropdown/category_dropdown.dart';
 
 class AddNewObjectContentMobile extends StatefulWidget {
   const AddNewObjectContentMobile({Key key}) : super(key: key);
@@ -19,6 +20,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
   int currStep = 0;
   static final _focusNode = FocusNode();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   // File _image;
   String categoryId;
   final picker = ImagePicker();

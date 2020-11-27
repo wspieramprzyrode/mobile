@@ -1,5 +1,6 @@
 import 'package:location/location.dart';
-import 'package:wspieramprzyrode/models/gps.dart';
+
+import 'gpslocation.dart';
 
 extension LocationDateExt on LocationData {
   GpsLocation toGpsLocation() {

@@ -1,5 +1,5 @@
-import 'package:wspieramprzyrode/models/gpscoordinates.dart';
-import 'package:wspieramprzyrode/models/gpslocation.dart';
+import '../models/gpscoordinates.dart';
+import '../services/geolocation/gpslocation.dart';
 
 extension GpsLocationExt on GpsLocation {
   GpsCoordinates getGpsCoordinates() {

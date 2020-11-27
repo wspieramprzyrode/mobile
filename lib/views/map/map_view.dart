@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:latlong/latlong.dart';
-import 'package:wspieramprzyrode/models/gps.dart';
-import 'package:wspieramprzyrode/models/inventory_object.dart';
-import 'package:wspieramprzyrode/locator.dart';
-import 'package:wspieramprzyrode/views/map/map_bloc.dart';
+
+import '../../locator.dart';
+import '../../models/inventory_object.dart';
+import '../../services/geolocation/gpslocation.dart';
+import '../../views/map/map_bloc.dart';
 
 class MapView extends StatefulWidget {
   const MapView({Key key}) : super(key: key);

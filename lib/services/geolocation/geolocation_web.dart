@@ -1,11 +1,13 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
-import 'package:js/js.dart';
-import 'package:wspieramprzyrode/models/gpslocation.dart';
-import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
+import '../geolocation/geolocation_service.dart';
+import '../geolocation/gpslocation.dart';
+import 'jslocation_stub.dart' if (dart.library.js) 'jslocation.dart';
 
-import 'jslocation.dart';
+/// Create a [GeolocationWeb] service.
+///
+/// Used from conditional imports, matches the definition in `geolocation_stub.dart`.
+GeolocationService createGeolocationService() => GeolocationWeb();
 
 class GeolocationWeb with GeolocationService {
   GpsLocation _currentLocation;
@@ -14,19 +16,6 @@ class GeolocationWeb with GeolocationService {
   GpsLocation get currentLocation => _currentLocation;
 
   @override
-  Future<GpsLocation> getUserLocation() async {
-    final Completer<GpsLocation> completer = Completer();
-    try {
-      getCurrentPosition(allowInterop((pos) {
-        _currentLocation =
-            GpsLocation(pos.coords.latitude, pos.coords.longitude);
-        completer.complete(_currentLocation);
-      }));
-    } on Exception catch (e, st) {
-      debugPrint('Could not get location: ${e.toString()}');
-      completer.completeError(e, st);
-    }
-
-    return completer.future;
-  }
+  Future<GpsLocation> getUserLocation() async =>
+      _currentLocation = await getCurrentLocation();
 }
