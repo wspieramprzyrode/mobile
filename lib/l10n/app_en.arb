@@ -42,5 +42,20 @@
   "fetchLocation": "Get location",
   "@fetchLocation": {
     "description": ""
-  }
+  },
+  "changeTheme": "Change app theme",
+  "@changeTheme": {
+    "description": "Text that tells user to change app's theme (appearance)"
+  },
+  "locationSettings": "Go to location settings",
+  "@locationSettings": {
+    "description": "Button text that navigates user to the system settings."
+  },
+  "fetchObjectLocationDescription": "Get as close to the object as possible",
+  "@fetchObjectLocationDescription": {
+    "description": "Description of action to fetch user's location to assign it to the object."
+  },
+  "welcome": "Welcome",
+  "awaitingResult": "Awaiting result...",
+  "unexpectedError": "Unexpected error occurred"
 }

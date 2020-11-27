@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:theme_provider/theme_provider.dart';
-import 'package:app_settings/app_settings.dart';
+
+import '../../l10n/l10n.dart';
 
 class SettingsViewContentMobile extends StatefulWidget {
   const SettingsViewContentMobile({Key key}) : super(key: key);
@@ -42,7 +44,7 @@ class _SettingsViewContentMobileState extends State<SettingsViewContentMobile> {
           onPressed: () {
             AppSettings.openLocationSettings();
           },
-          child: const Text("Location"),
+          child: Text(context.appLocalizations.locationSettings),
         ),
         RaisedButton(
           onPressed: () {
@@ -50,7 +52,7 @@ class _SettingsViewContentMobileState extends State<SettingsViewContentMobile> {
                 context: context,
                 builder: (_) => ThemeConsumer(child: ThemeDialog()));
           },
-          child: const Text("Wybierz kolorystykę"),
+          child: Text(context.appLocalizations.changeTheme),
         ),
       ],
     );

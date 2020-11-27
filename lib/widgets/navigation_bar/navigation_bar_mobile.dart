@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/l10n.dart';
+
 class NavigationBarMobile extends StatelessWidget {
   const NavigationBarMobile({Key key}) : super(key: key);
 
@@ -15,7 +17,7 @@ class NavigationBarMobile extends StatelessWidget {
               Scaffold.of(context).openDrawer();
             },
           ),
-          Text("Wspieram przyrodę")
+          Text(context.appLocalizations.appName)
         ],
       ),
     );

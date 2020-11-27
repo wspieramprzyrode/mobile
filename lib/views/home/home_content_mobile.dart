@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/l10n.dart';
+
 class HomeContentMobile extends StatelessWidget {
   const HomeContentMobile({Key key}) : super(key: key);
 
@@ -7,8 +9,8 @@ class HomeContentMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
-        Text('Welcome'),
+      children: <Widget>[
+        Text(context.appLocalizations.welcome),
       ],
     );
   }

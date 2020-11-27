@@ -36,7 +36,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
           builder: (_) => Scaffold(
                 body: Center(
-                    child: Text('No route defined for ${settings.name}')),
+                  child: Text(
+                      'No route defined for ${settings.name}'), // TODO Implement page not found widget
+                ),
               ));
   }
   return _getPageRoute(

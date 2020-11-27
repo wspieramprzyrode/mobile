@@ -9,5 +9,11 @@
   "takePhoto": "Zrób zdjęcie",
   "photoFromGallery": "Wybierz z galerii",
   "choiceObjectCategory": "Wybierz typ obiektu",
-  "fetchLocation": "Pobierz lokalizację"
+  "fetchLocation": "Pobierz lokalizację",
+  "changeTheme": "Zmień wygląd aplikacji",
+  "locationSettings": "Otwórz ustawenia GPS",
+  "fetchObjectLocationDescription": "Podejdź możliwie jak najbliżej",
+  "welcome": "Witaj",
+  "awaitingResult": "Proszę czekać...",
+  "unexpectedError": "Wystąpił nieoczekiwany błąd."
 }

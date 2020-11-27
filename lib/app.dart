@@ -30,7 +30,7 @@ class App extends StatelessWidget {
             initialRoute: homeRoute,
           ),
         ),
-        localizationsDelegates: [
+        localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

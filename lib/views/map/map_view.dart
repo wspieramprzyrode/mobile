@@ -5,6 +5,7 @@ import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:latlong/latlong.dart';
 
 import '../../geolocation/gpslocation.dart';
+import '../../l10n/l10n.dart';
 import '../../locator.dart';
 import '../../models/inventory_object.dart';
 import '../../views/map/map_bloc.dart';
@@ -34,7 +35,7 @@ class MapViewState extends State<MapView> {
       cubit: mapBloc,
       builder: (context, state) {
         if (state is MapLoading) {
-          return _progressWidget();
+          return _progressWidget(context);
         }
 
         if (state is MapLoaded) {
@@ -42,7 +43,7 @@ class MapViewState extends State<MapView> {
         }
 
         if (state is MapError) {
-          return _errorWidget();
+          return _errorWidget(context);
         }
 
         return Container();
@@ -98,10 +99,10 @@ class MapViewState extends State<MapView> {
     );
   }
 
-  Widget _progressWidget() {
+  Widget _progressWidget(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
+      children: [
         SizedBox(
           width: 60,
           height: 60,
@@ -109,13 +110,13 @@ class MapViewState extends State<MapView> {
         ),
         Padding(
           padding: EdgeInsets.only(top: 16),
-          child: Text('Awaiting result...'),
+          child: Text(context.appLocalizations.awaitingResult),
         ),
       ],
     );
   }
 
-  Widget _errorWidget() {
+  Widget _errorWidget(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -126,7 +127,7 @@ class MapViewState extends State<MapView> {
         ),
         Padding(
           padding: EdgeInsets.only(top: 16),
-          child: Text('Unexpected error occurred'),
+          child: Text(context.appLocalizations.unexpectedError),
         ),
       ],
     );

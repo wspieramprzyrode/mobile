@@ -70,12 +70,13 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
     final List<Step> steps = [
       Step(
           title: Text(context.appLocalizations.fetchLocation),
-          subtitle: Text('Wykonaj jak najblizej obiektu'),
+          subtitle:
+              Text(context.appLocalizations.fetchObjectLocationDescription),
           isActive: true,
           //state: StepState.editing,
           content: RaisedButton(
             onPressed: _getLocation,
-            child: Text("Pobierz"),
+            child: Text(context.appLocalizations.fetchLocation),
           )),
       Step(
           title: Text(context.appLocalizations.choicePhoto),
