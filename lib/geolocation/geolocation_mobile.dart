@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:location/location.dart';
 
-import '../geolocation/geolocation_service.dart';
-import '../geolocation/gpslocation.dart';
-import '../geolocation/location_ext.dart';
+import 'geolocation.dart';
 
 /// Create a [GeolocationMobile] service.
 ///

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
+import '../../geolocation/geolocation_service.dart';
+import '../../geolocation/gpslocation.dart';
 import '../../i18n/localization.dart';
-import '../../services/geolocation/geolocation_service.dart';
-import '../../services/geolocation/gpslocation.dart';
 import '../../widgets/category_dropdown/category_dropdown.dart';
 
 class AddNewObjectContentMobile extends StatefulWidget {

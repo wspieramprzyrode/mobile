@@ -4,9 +4,9 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:latlong/latlong.dart';
 
+import '../../geolocation/gpslocation.dart';
 import '../../locator.dart';
 import '../../models/inventory_object.dart';
-import '../../services/geolocation/gpslocation.dart';
 import '../../views/map/map_bloc.dart';
 
 class MapView extends StatefulWidget {

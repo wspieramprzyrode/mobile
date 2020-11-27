@@ -5,7 +5,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:js/js.dart';
-import 'gpslocation.dart';
+
+import '../gpslocation.dart';
 
 @JS('getCurrentPosition') // Geolocation API's getCurrentPosition
 external void getCurrentPosition(Function(GeolocationPosition pos) success);

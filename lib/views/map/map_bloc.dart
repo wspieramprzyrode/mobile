@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 
+import '../../geolocation/geolocation_service.dart';
+import '../../geolocation/gpslocation.dart';
 import '../../models/inventory_object.dart';
 import '../../services/api/inventory_service.dart';
-import '../../services/geolocation/geolocation_service.dart';
-import '../../services/geolocation/gpslocation.dart';
 
 enum MapEvent { loadMap }
 

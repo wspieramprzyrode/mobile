@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import '../geolocation/geolocation_service.dart';
-import '../geolocation/gpslocation.dart';
-import 'jslocation_stub.dart' if (dart.library.js) 'jslocation.dart';
+import 'geolocation.dart';
+import 'get_current_location_stub.dart'
+    if (dart.library.js) 'get_current_location_web.dart';
 
 /// Create a [GeolocationWeb] service.
 ///

@@ -1,7 +1,7 @@
+import 'geolocation.dart';
 import 'geolocation_stub.dart'
     if (dart.library.io) 'geolocation_mobile.dart'
     if (dart.library.js) 'geolocation_web.dart';
-import 'gpslocation.dart';
 
 abstract class GeolocationService {
   /// Creates a new platform appropriate [GeolocationService].

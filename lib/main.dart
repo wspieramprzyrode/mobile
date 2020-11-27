@@ -4,14 +4,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_driver/driver_extension.dart';
 import 'package:provider/provider.dart';
 import 'package:theme_provider/theme_provider.dart';
-import 'package:wspieramprzyrode/logging_bloc_observer.dart';
-import 'package:wspieramprzyrode/routing/route_names.dart';
-import 'package:wspieramprzyrode/routing/router.dart';
-import 'package:wspieramprzyrode/services/api/inventory_service.dart';
-import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
-import 'package:wspieramprzyrode/services/navigation_service.dart';
+
+import 'geolocation/geolocation.dart';
 import 'i18n/localization.dart';
 import 'locator.dart';
+import 'logging_bloc_observer.dart';
+import 'routing/route_names.dart';
+import 'routing/router.dart';
+import 'services/api/inventory_service.dart';
+import 'services/navigation_service.dart';
 
 void main() {
   setupLocator();

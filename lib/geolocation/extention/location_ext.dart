@@ -1,8 +1,8 @@
 import 'package:location/location.dart';
 
-import 'gpslocation.dart';
+import '../gpslocation.dart';
 
-extension LocationDateExt on LocationData {
+extension LocationDataExt on LocationData {
   GpsLocation toGpsLocation() {
     return GpsLocation(
       latitude,
