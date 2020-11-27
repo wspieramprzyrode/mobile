@@ -8,9 +8,8 @@ import 'package:wspieramprzyrode/logging_bloc_observer.dart';
 import 'package:wspieramprzyrode/routing/route_names.dart';
 import 'package:wspieramprzyrode/routing/router.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
-import 'package:wspieramprzyrode/services/geolocation_service.dart';
+import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
 import 'package:wspieramprzyrode/services/navigation_service.dart';
-
 import 'i18n/localization.dart';
 import 'locator.dart';
 

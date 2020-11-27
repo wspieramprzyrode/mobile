@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:wspieramprzyrode/datamodels/inventory_object.dart';
+import 'package:wspieramprzyrode/models/gps.dart';
+import 'package:wspieramprzyrode/models/inventory_object.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
-import 'package:wspieramprzyrode/services/geolocation_service.dart';
+import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
 
 enum MapEvent { loadMap }
 
@@ -18,7 +18,7 @@ class MapError extends MapState {}
 class MapLoading extends MapState {}
 
 class MapLoaded extends MapState {
-  final Position position;
+  final GpsLocation position;
   final List<InventoryObject> objects;
 
   MapLoaded({
@@ -31,7 +31,7 @@ class MapBloc extends Bloc<MapEvent, MapState> {
   final GeolocationService geolocationService;
   final InventoryService inventoryService;
 
-  Position _userPosition;
+  GpsLocation _userPosition;
   List<InventoryObject> _objects = [];
 
   MapBloc({

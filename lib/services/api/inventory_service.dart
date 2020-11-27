@@ -1,6 +1,6 @@
 import 'package:retrofit/retrofit.dart';
-import 'package:wspieramprzyrode/datamodels/invetory_category.dart';
-import 'package:wspieramprzyrode/datamodels/inventory_object.dart';
+import 'package:wspieramprzyrode/models/invetory_category.dart';
+import 'package:wspieramprzyrode/models/inventory_object.dart';
 import 'package:dio/dio.dart';
 
 part 'inventory_service.g.dart';

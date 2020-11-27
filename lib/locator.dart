@@ -1,8 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:wspieramprzyrode/services/api/inventory_service.dart';
-import 'package:wspieramprzyrode/services/geolocation_service.dart';
+import 'package:wspieramprzyrode/services/geolocation/geolocation_mobile.dart';
+import 'package:wspieramprzyrode/services/geolocation/geolocation_service.dart';
+import 'package:wspieramprzyrode/services/geolocation/geolocation_web.dart';
 import 'package:wspieramprzyrode/services/navigation_service.dart';
 import 'package:wspieramprzyrode/views/map/map_bloc.dart';
 
@@ -18,8 +21,15 @@ void setupLocator() {
       return dio;
     })
     ..registerLazySingleton<NavigationService>(() => NavigationService())
-    ..registerLazySingleton<GeolocationService>(() => GeolocationService())
-    ..registerLazySingleton<InventoryService>(() => InventoryService(locator.get()))
+    ..registerLazySingleton<GeolocationService>(() {
+      if (kIsWeb) {
+        return GeolocationWeb();
+      } else {
+        return GeolocationMobile();
+      }
+    })
+    ..registerLazySingleton<InventoryService>(
+        () => InventoryService(locator.get()))
     ..registerFactory<MapBloc>(() => MapBloc(
           geolocationService: locator.get(),
           inventoryService: locator.get(),

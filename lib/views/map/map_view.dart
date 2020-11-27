@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:latlong/latlong.dart';
-import 'package:wspieramprzyrode/datamodels/inventory_object.dart';
+import 'package:wspieramprzyrode/models/gps.dart';
+import 'package:wspieramprzyrode/models/inventory_object.dart';
 import 'package:wspieramprzyrode/locator.dart';
 import 'package:wspieramprzyrode/views/map/map_bloc.dart';
 
@@ -50,7 +50,7 @@ class MapViewState extends State<MapView> {
   }
 
   Widget _dataWidget(
-    Position position,
+    GpsLocation position,
     List<Marker> markers,
   ) {
     return Column(
