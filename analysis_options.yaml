@@ -12,3 +12,5 @@ linter:
   rules:
     # It's disabled because performance improvement is insignificant
     prefer_const_constructors: false
+    # Disabled because of manual sorting required
+    sort_pub_dependencies: false
