@@ -27,36 +27,39 @@ dependencies:
     sdk: flutter
 
   # ui
-  cupertino_icons: ^0.1.3
-  font_awesome_flutter: ^8.8.1
-  theme_provider: ^0.3.3
-  image_picker: ^0.6.7 # only mobile
+  cupertino_icons: ^1.0.1+1
+  font_awesome_flutter: ^8.10.0
+  theme_provider: ^0.4.0+1
+  ## only mobile
+  image_picker: ^0.6.7+14
 
   # architecture, di and tools
-  responsive_builder: ^0.2.0+2
+  responsive_builder: ^0.3.0
   get_it: ^4.0.2
-  provider: ^4.1.2
-  app_settings: ^4.0.0 # only mobile
-  permission_handler: ^5.0.0+hotfix.8 # only mobile
-  lint: ^1.2.0
-  flutter_bloc: ^6.0.1
-  bloc: ^6.0.1
-  js: ^0.6.0 # mapping js interfaces to dart
+  provider: ^4.3.2+2
+  lint: ^1.5.1
+  flutter_bloc: ^6.1.1
+  bloc: ^6.1.0
+  js: ^0.6.2
   intl: ^0.16.1
+  ## only mobile
+  app_settings: ^4.0.4
+  permission_handler: ^5.0.1+1
 
   # maps and location
-  flutter_map: "0.10.1+1" # only mobile
+  flutter_map: "0.10.1+1"
   flutter_map_marker_cluster: any
-  location: "3.0.2"
+  ## only mobile
+  location: ^3.1.0
 
   # storage
-  hive: ^1.4.1+1
+  hive: ^1.4.4+1
 
   # networking
-  retrofit: ^1.3.4
-  dio: ^3.0.9
+  retrofit: ^1.3.4+1
+  dio: ^3.0.10
   pretty_dio_logger: ^1.1.1
-  json_annotation: ^3.0.1
+  json_annotation: ^3.1.1
 
 dev_dependencies:
   flutter_test:
@@ -65,9 +68,9 @@ dev_dependencies:
     sdk: flutter
   test: any
 
-  retrofit_generator: ^1.3.7
-  build_runner: ^1.10.0
-  json_serializable: ^3.3.0
+  retrofit_generator: ^1.4.0+2
+  build_runner: ^1.10.6
+  json_serializable: ^3.5.0
 
 flutter:
   uses-material-design: true
