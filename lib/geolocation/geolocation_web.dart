@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'geolocation.dart';
 import 'get_current_location_stub.dart'
-    if (dart.library.js) 'get_current_location_web.dart';
+    if (dart.library.js) 'web/get_current_location_web.dart';
 
 /// Create a [GeolocationWeb] service.
 ///
