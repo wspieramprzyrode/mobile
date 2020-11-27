@@ -1,0 +1,13 @@
+{
+  "appName": "Wspieram Przyrodę",
+  "home": "Start",
+  "birds": "Ptaki",
+  "birdsMap": "Mapa",
+  "birdsAddObject": "Dodaj budkę",
+  "settings": "Ustawienia",
+  "choicePhoto": "Wybierz zdjęcie",
+  "takePhoto": "Zrób zdjęcie",
+  "photoFromGallery": "Wybierz z galerii",
+  "choiceObjectCategory": "Wybierz typ obiektu",
+  "fetchLocation": "Pobierz lokalizację"
+}

@@ -3,16 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_driver/driver_extension.dart';
 import 'package:provider/provider.dart';
-import 'package:theme_provider/theme_provider.dart';
 
+import 'app.dart';
 import 'geolocation/geolocation.dart';
-import 'i18n/localization.dart';
 import 'locator.dart';
 import 'logging_bloc_observer.dart';
-import 'routing/route_names.dart';
-import 'routing/router.dart';
 import 'services/api/inventory_service.dart';
-import 'services/navigation_service.dart';
 
 void main() {
   setupLocator();
@@ -28,32 +24,6 @@ void main() {
       Provider(create: (_) => locator.get<GeolocationService>()),
       Provider(create: (_) => locator.get<InventoryService>()),
     ],
-    child: MyApp(),
+    child: App(),
   ));
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ThemeProvider(
-      themes: [
-        AppTheme.light(),
-        AppTheme.dark(),
-      ],
-      defaultThemeId: AppTheme.dark().id,
-      saveThemesOnChange: true,
-      loadThemeOnInit: true,
-      child: MaterialApp(
-        title: AppLocalization.appName,
-        debugShowCheckedModeBanner: false,
-        home: ThemeConsumer(
-          child: Navigator(
-            key: locator<NavigationService>().navigatorKey,
-            onGenerateRoute: generateRoute,
-            initialRoute: homeRoute,
-          ),
-        ),
-      ),
-    );
-  }
 }

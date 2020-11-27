@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:wspieramprzyrode/i18n/localization.dart';
 import 'package:wspieramprzyrode/routing/route_names.dart';
 import 'package:wspieramprzyrode/views/add_new_object/add_new_object_view.dart';
 import 'package:wspieramprzyrode/views/home/home_view.dart';
 import 'package:wspieramprzyrode/views/map/map_view.dart';
 import 'package:wspieramprzyrode/views/settings/settings_view.dart';
 import 'package:wspieramprzyrode/widgets/navigation_drawer/navigation_drawer.dart';
+
+import '../l10n/l10n.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   Widget child;
@@ -39,7 +40,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
               ));
   }
   return _getPageRoute(
-      _wrap(child, defaultAppBar: defaultAppBar), // ignore: avoid_redundant_argument_values
+      _wrap(
+        child,
+        defaultAppBar: defaultAppBar, // ignore: avoid_redundant_argument_values
+      ),
       settings);
 }
 
@@ -49,7 +53,7 @@ Widget _wrap(Widget child, {bool defaultAppBar = true}) {
       drawer: NavigationDrawer(),
       appBar: defaultAppBar
           ? AppBar(
-              title: Text(AppLocalization.appName),
+              title: Text(context.appLocalizations.appName),
             )
           : null,
       body: SafeArea(child: Center(child: child)),

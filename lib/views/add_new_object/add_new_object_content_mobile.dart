@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../../geolocation/geolocation_service.dart';
 import '../../geolocation/gpslocation.dart';
-import '../../i18n/localization.dart';
+import '../../l10n/l10n.dart';
 import '../../widgets/category_dropdown/category_dropdown.dart';
 
 class AddNewObjectContentMobile extends StatefulWidget {
@@ -69,7 +69,7 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
     geolocation = Provider.of<GeolocationService>(context);
     final List<Step> steps = [
       Step(
-          title: Text(AppLocalization.fetchLocation),
+          title: Text(context.appLocalizations.fetchLocation),
           subtitle: Text('Wykonaj jak najblizej obiektu'),
           isActive: true,
           //state: StepState.editing,
@@ -78,23 +78,23 @@ class _AddNewObjectContentMobileState extends State<AddNewObjectContentMobile> {
             child: Text("Pobierz"),
           )),
       Step(
-          title: Text(AppLocalization.choicePhoto),
+          title: Text(context.appLocalizations.choicePhoto),
           isActive: true,
           content: Row(
             children: [
               RaisedButton(
                 onPressed: takeImage,
-                child: Text(AppLocalization.takePhoto),
+                child: Text(context.appLocalizations.takePhoto),
               ),
               Spacer(),
               RaisedButton(
                 onPressed: getImage,
-                child: Text(AppLocalization.photoFromGallery),
+                child: Text(context.appLocalizations.photoFromGallery),
               )
             ],
           )),
       Step(
-          title: Text(AppLocalization.choiceObjectCategory),
+          title: Text(context.appLocalizations.choiceObjectCategory),
           isActive: true,
           content: CategoryDropdown(categoryId: categoryId))
     ];

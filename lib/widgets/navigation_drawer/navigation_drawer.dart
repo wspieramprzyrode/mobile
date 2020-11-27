@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wspieramprzyrode/i18n/localization.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:wspieramprzyrode/routing/route_names.dart';
 import 'package:wspieramprzyrode/widgets/navigation_drawer/drawer_item.dart';
 import 'package:wspieramprzyrode/widgets/navigation_drawer/drawer_menu.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../l10n/l10n.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({Key key}) : super(key: key);
@@ -15,13 +16,17 @@ class NavigationDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerItem(AppLocalization.home, homeRoute, Icons.home),
-            DrawerMenu(AppLocalization.birds, FaIcon(FontAwesomeIcons.kiwiBird).icon, <Widget>[
-              DrawerItem(AppLocalization.birdsMap, mapRoute, Icons.map),
-              DrawerItem(AppLocalization.birdsAddObject, addNewObjectRoute, Icons.add),
+            DrawerItem(context.appLocalizations.home, homeRoute, Icons.home),
+            DrawerMenu(context.appLocalizations.birds,
+                FaIcon(FontAwesomeIcons.kiwiBird).icon, <Widget>[
+              DrawerItem(
+                  context.appLocalizations.birdsMap, mapRoute, Icons.map),
+              DrawerItem(context.appLocalizations.birdsAddObject,
+                  addNewObjectRoute, Icons.add),
             ]),
             Divider(height: 5.0),
-            DrawerItem(AppLocalization.settings, settingsRoute, Icons.settings),
+            DrawerItem(context.appLocalizations.settings, settingsRoute,
+                Icons.settings),
           ],
         ),
       ),

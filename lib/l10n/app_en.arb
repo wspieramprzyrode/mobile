@@ -1,0 +1,46 @@
+{
+  "appName": "Helping Nature",
+  "@appName": {
+    "description": "Localized name of the application"
+  },
+  "home": "Home",
+  "@home": {
+    "description": ""
+  },
+  "birds": "Birds",
+  "@birds": {
+    "description": ""
+  },
+  "birdsMap": "Map",
+  "@birdsMap": {
+    "description": ""
+  },
+  "birdsAddObject": "Add birdhouse",
+  "@birdsAddObject": {
+    "description": ""
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": ""
+  },
+  "choicePhoto": "Choose photo",
+  "@choicePhoto": {
+    "description": ""
+  },
+  "takePhoto": "Take photo",
+  "@takePhoto": {
+    "description": ""
+  },
+  "photoFromGallery": "Choose photo from gallery",
+  "@photoFromGallery": {
+    "description": ""
+  },
+  "choiceObjectCategory": "Choose object type",
+  "@appNchoiceObjectCategoryame": {
+    "description": ""
+  },
+  "fetchLocation": "Get location",
+  "@fetchLocation": {
+    "description": ""
+  }
+}
