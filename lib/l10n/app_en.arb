@@ -36,7 +36,7 @@
     "description": ""
   },
   "choiceObjectCategory": "Choose object type",
-  "@appNchoiceObjectCategoryame": {
+  "@choiceObjectCategory": {
     "description": ""
   },
   "fetchLocation": "Get location",
@@ -57,5 +57,13 @@
   },
   "welcome": "Welcome",
   "awaitingResult": "Awaiting result...",
-  "unexpectedError": "Unexpected error occurred"
+  "unexpectedError": "Unexpected error occurred",
+  "goToHome": "Go to home",
+  "@goToHome": {
+    "description": "Button text that navigates user to home page"
+  },
+  "errorNotFound": "We cannot find what you were looking for",
+  "@errorNotFound": {
+    "description": "Error text when not found error will happen. If page is not found or some resource."
+  }
 }

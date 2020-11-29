@@ -7,6 +7,8 @@ class NavigationService {
     return navigatorKey.currentState.pushNamed(routeName);
   }
 
+  NavigatorState navigator() => navigatorKey.currentState;
+
   void goBack() {
     return navigatorKey.currentState.pop();
   }

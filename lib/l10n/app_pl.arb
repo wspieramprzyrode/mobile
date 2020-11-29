@@ -15,5 +15,7 @@
   "fetchObjectLocationDescription": "Podejdź możliwie jak najbliżej",
   "welcome": "Witaj",
   "awaitingResult": "Proszę czekać...",
-  "unexpectedError": "Wystąpił nieoczekiwany błąd."
+  "unexpectedError": "Wystąpił nieoczekiwany błąd.",
+  "goToHome": "Wróć na główną stronę",
+  "errorNotFound": "Nie udało nam się znaleźć czego szukałeś"
 }

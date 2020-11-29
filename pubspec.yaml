@@ -75,3 +75,18 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+    - assets/images/
+
+# Flutter gen plugin to generate class with paths to assets
+# https://github.com/FlutterGen/flutter_gen
+flutter_gen:
+  output: lib/assets_gen/
+  lineLength: 80
+
+#  Colors can be also added in for of xml - check docs for more info
+#
+#  colors:
+#    inputs:
+#      - assets/color/colors.xml

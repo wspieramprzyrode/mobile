@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:wspieramprzyrode/routing/route_names.dart';
-import 'package:wspieramprzyrode/views/add_new_object/add_new_object_view.dart';
-import 'package:wspieramprzyrode/views/home/home_view.dart';
-import 'package:wspieramprzyrode/views/map/map_view.dart';
-import 'package:wspieramprzyrode/views/settings/settings_view.dart';
-import 'package:wspieramprzyrode/widgets/navigation_drawer/navigation_drawer.dart';
 
 import '../l10n/l10n.dart';
+import '../routing/route_names.dart';
+import '../views/add_new_object/add_new_object_view.dart';
+import '../views/home/home_view.dart';
+import '../views/map/map_view.dart';
+import '../views/settings/settings_view.dart';
+import '../widgets/navigation_drawer/navigation_drawer.dart';
+import '../widgets/page_not_found.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   Widget child;
@@ -33,13 +33,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       child = ObjectDetailsView();
     break;*/
     default:
-      return MaterialPageRoute(
-          builder: (_) => Scaffold(
-                body: Center(
-                  child: Text(
-                      'No route defined for ${settings.name}'), // TODO Implement page not found widget
-                ),
-              ));
+      return MaterialPageRoute(builder: (_) => PageNotFound());
   }
   return _getPageRoute(
       _wrap(
